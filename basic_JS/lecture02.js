@@ -120,7 +120,7 @@ console.log(parseInt('A')) /NaN
 /**
  * - 3. Boolean 타입 : true, false 값
  * 
- * - 4.  null : 값이 없거나 비어있음
+ * - 4. null : 값이 없거나 비어있음
  * 
  * - 5. undefined : 값이 초기화 되지 않았음 (정의되지 않음)
  * 
@@ -172,10 +172,17 @@ str = "30";
 console.log("num != str:" + (num != str)); // true
 console.log("num !== str:" + (num !== str)); //true 
 /**
- * JS에서는 === or !===을 많이 사용한다. 
+ * JS에서는 === or !==을 많이 사용한다. .
  * 논리적 비교를 위해서는 이걸 사용해야한다. 이게 습관화되어야한다 ㅋㅋㅋㅋㅋ 미틴
  * 
  */
+
+
+
+
+
+
+
 
 
 
