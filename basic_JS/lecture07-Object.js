@@ -20,7 +20,7 @@
 let emptyObject ={}; //객체 리터럴
 
 let employee = { //객체 선언
-    "first-Name" : "Jobs",
+    "firstName" : "Jobs",
     "last-Name" : "Steve",
     "company" : "Apple"
 }
@@ -43,5 +43,69 @@ console.log(employee.company);
 emptyObject.name = 'kim'; //emptyObject에 name이라는 key에 kim이라는 value가 들어가게됨
 
 console.log(`emptyObject.name : ${emptyObject.name}`);
+
+
+/**
+ * JS 에서 객체를 만드는 방법
+ * 
+ * - 객체 리터럴을 사용하여 생성 
+ */
+
+//객체 리터럴을 사용하여 객체 생성
+let customer = {
+    id : 'A1234',
+    name : 'kim'
+}; 
+
+//console.log(employee);
+console.log(customer);
+
+console.log(customer.id + " : " + customer['name']);
+
+customer.age = 20;
+
+console.log(customer);
+
+customer.toString = function() {
+    return this.name;
+};
+
+console.log(customer);
+console.log(customer.toString);
+
+//delete customer.toString; //property 삭제하기 
+delete customer.age;
+console.log(customer);
+
+//객체의 모든 프로퍼티를 찍는법
+
+for ( const key in customer ) { //customer를 돌리면 key를 뱉어낸다. 
+    console.log(key + ' : ' + customer[key]);
+}
+
+/**
+ * 생성자 방식으로 객체를 만드는 법
+ * 근데, ES6 이후에는 이렇게 잘 만들지는 않는다. 
+ * 하지만, 공부할 필요는 있다. 
+ */
+
+let Person = function (name, id) { //생성자 함수를 통해 객체 생성
+    this.name = name;
+    this.id = id;
+};
+
+let person01 = new Person('kim', 'A12345');
+console.log(person01);
+
+let person02 = new Person('Lee', 'B1234');
+console.log(person02);
+
+
+/**
+ * 구조분의 할당 
+ */
+let {name, id} = person01;
+console.log(name, id);
+
 
 
