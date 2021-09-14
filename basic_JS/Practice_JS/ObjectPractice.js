@@ -77,3 +77,14 @@ for (const key in p03) {
 //     return 'love';
 // })
 
+
+let loveperson = new personPractice ('Minjae', 'Kim', 30, 'male');
+
+loveperson.loveother = function(lover) {
+    console.log(`${this.firstname} + ' ' + ${this.lastname} + 'love ' + ${lover}`);
+}
+
+for (const key in loveperson) {
+    console.log(`key : ${loveperson.key}`);
+}
+
