@@ -5,6 +5,17 @@ let practiceObject = {
     gender : "male"
 }
 
+let personPractice = function (firstname, lastname, age, gender, attack) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.age = age;
+    this.gender = gender;
+    this.attack = function(weapon) {
+        console.log(`${firstname} 이 ${weapon} 을 들고 공격함`)
+    }
+
+}
+
 
 for (const key in practiceObject) {
     console.log(key);
@@ -21,3 +32,7 @@ practiceObject.walk = function (item) {
 practiceObject.walk('abc');
 
 console.log(practiceObject);
+
+let p01 = new personPractice('kim', 'min', 30, 'male');
+
+console.log(p01.attack('weapon'));
