@@ -58,14 +58,20 @@ console.log('----------')
 
 for (const key in p02) {
     console.log(key);
-    
+}
+
+let p03 = new personPractice('kim');
+
+console.log('------------')
+
+console.log(`p03.firstname : ${p03.firstname}`);
+
+for (const key in p03) {
+    console.log(`${key} : ${p03.key}`);
 }
 
 // console.log('p01 : ' + p01.love);  //undefined
 // console.log('p02 : ' + p02.love('element')); //
-
-
-
 
 // console.log(p02.love = function () {
 //     return 'love';
