@@ -88,3 +88,7 @@ for (const key in loveperson) {
     console.log(`key : ${loveperson.key}`);
 }
 
+array.forEach(element => {
+    
+});
+
