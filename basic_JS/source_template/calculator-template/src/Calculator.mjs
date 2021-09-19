@@ -62,13 +62,13 @@ function calculate() { //실제로 계산을 하는 메소드 //validation은 �
     // })
 
     for (let i = 0 ; i < inputDatas.length; i ++) {
-        if (validator.isOdd(i)) { // 홀수 -> operation 
-            if(validator.isOper(inputDatas[i]) || i == 0) {
-                currentOper = value;
+        if (validator.isEven(i)) { 
+            if(validator.isNumber(parseInt(inputDatas[i]))) {
+                currentNumber = parseInt(inputDatas[i]);
             }
         }else {
-            if (validator.isOdd(inputDatas[i])) {
-                currentNumber = parseInt(inputDatas[i])
+            if (validator.isOper(inputDatas[i])) {
+                currentOper = inputDatas[i];
             }
         }
 

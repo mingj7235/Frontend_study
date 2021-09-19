@@ -2,10 +2,13 @@ export function isNumber( number ) {
     return !isNaN (parseInt(number));
 }
 
-function isOdd ( indexNum ) {
-    return indexNum % 2 === 1 ; // true -> odd / false -> 
+function isEven ( indexNum ) {
+    if (indexNum === 0) {
+        return true;
+    } else {
+        indexNum % 2 === 0 ; 
+    } 
 }
-
 export function isOper ( oper ) {
     let opers = "+-*/=";
     return opers.indexOf(oper) !== -1;
@@ -14,5 +17,5 @@ export function isOper ( oper ) {
 export default {
     isNumber, 
     isOper,
-    isOdd
+    isEven
 }
