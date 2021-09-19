@@ -13,42 +13,61 @@ function appendData( inputData ) {
 
 function getInputDatasMessage () { //사용자가 키보드로 값이나 oper를 넣을 때 출력이 되도록 하는 메세지를 리턴하는 메소드
     let message = '';
-    inputDatas.map( value => message += ' ' + value);
+    inputDatas.map( value => {
+        // if(inputDatas.findIndex === 0) {
+        //     message += ' ';
+        // } else {
+        //     message += ' ' + value;
+        // }
+        //message += ' ' + value;
+        
+     });
     return message;
 }
 
 function calculate() { //실제로 계산을 하는 메소드 //validation은 숙제로 해보자.
-    let result = parseInt(inputDatas[0]); //최초에 숫자일것이라고 생각하고 만듬. validation 안함
+    let result = parseInt(inputDatas[0]); //최초에 숫자일것이라고 생각하고 만듬. validation 안함    
     let currentNumber = 0;
     let currentOper = '';
     let prevOper = '';
+    
+    // inputDatas.forEach( value => {
+    //     // if (validator.isNumber(parseInt(value))) {
+    //     //     currentNumber = parseInt(value);
+    //     // } else if (validator.isOper(value)) {
+    //     //     currentOper = value;
+    //     // }
 
-    inputDatas.forEach( value => {
-        if (validator.isNumber(parseInt(value))) {
-            currentNumber = parseInt(value);
-        } else if (validator.isOper(value)) {
-            currentOper = value;
-        }
+    //     if (validator.isOdd(inputDatas.))
+        
+    //     switch (prevOper) { //초기화 작업을 해주기때문
+    //         case '+' : 
+    //             result += currentNumber;
+    //             break;
+    //         case '-' : 
+    //             result -= currentNumber;
+    //             break;
+    //         case '*' : 
+    //             result *= currentNumber;
+    //             break;
+    //         case '/' : 
+    //             result /= currentNumber;
+    //             break;
+    //         default :
+    //             break;
+    //     }
+    //     prevOper = currentOper; 
+    //     currentOper = ''; //초기화
+    // })
 
-        switch (prevOper) { //초기화 작업을 해주기때문
-            case '+' : 
-                result += currentNumber;
-                break;
-            case '-' : 
-                result -= currentNumber;
-                break;
-            case '*' : 
-                result *= currentNumber;
-                break;
-            case '/' : 
-                result /= currentNumber;
-                break;
-            default :
-                break;
+    for (let i = 0 ; i < inputDatas.length; i ++) {
+        if (validator.isOdd(i)) { // 홀수 -> operation 
+            if(validator.isOper(inputDatas[i])) {
+                currentOper = value;
+            }
         }
-        prevOper = currentOper; 
-        currentOper = ''; //초기화
-    })
+    }
+
     return result;
 }
 
