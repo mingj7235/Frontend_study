@@ -1,7 +1,3 @@
-export function isNumber( number ) {
-    return !isNaN (parseInt(number));
-}
-
 function isEven ( indexNum ) {
     console.log(indexNum);
     if (indexNum === 0) {
@@ -10,6 +6,12 @@ function isEven ( indexNum ) {
         indexNum % 2 === 0 ; 
     } 
 }
+
+export function isNumber( number ) {
+    return !isNaN (parseInt(number));
+}
+
+
 export function isOper ( oper ) {
     let opers = "+-*/=";
     return opers.indexOf(oper) !== -1;
