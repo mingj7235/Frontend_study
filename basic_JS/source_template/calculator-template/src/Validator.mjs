@@ -3,6 +3,7 @@ export function isNumber( number ) {
 }
 
 function isEven ( indexNum ) {
+    console.log(indexNum);
     if (indexNum === 0) {
         return true;
     } else {
