@@ -20,6 +20,7 @@ function getInputDatasMessage () { //사용자가 키보드로 값이나 oper를
         //     message += ' ' + value;
         // }
         //message += ' ' + value;
+        message += ' ' + value;
         
      });
     return message;
@@ -62,10 +63,33 @@ function calculate() { //실제로 계산을 하는 메소드 //validation은 �
 
     for (let i = 0 ; i < inputDatas.length; i ++) {
         if (validator.isOdd(i)) { // 홀수 -> operation 
-            if(validator.isOper(inputDatas[i])) {
+            if(validator.isOper(inputDatas[i]) || i == 0) {
                 currentOper = value;
             }
+        }else {
+            if (validator.isOdd(inputDatas[i])) {
+                currentNumber = parseInt(inputDatas[i])
+            }
         }
+
+        switch (prevOper) {
+            case '+' :
+                result += currentNumber;
+                break;
+            case '-' :
+                result -= currentNumber;
+                break;
+            case '*' :
+                result *= currentNumber;
+                break;
+            case '/' :
+                result /= currentNumber;
+                break;
+        }
+
+        prevOper = currentNumber;
+        currentOper = '';
+
     }
 
     return result;
