@@ -65,6 +65,7 @@ function calculate() { //실제로 계산을 하는 메소드 //validation은 �
         if (validator.isEven(i)) { 
             if(validator.isNumber(parseInt(inputDatas[i]))) {
                 currentNumber = parseInt(inputDatas[i]);
+                
             }
         }else {
             if (validator.isOper(inputDatas[i])) {

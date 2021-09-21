@@ -17,3 +17,17 @@ function showPrompt () {
 }
 
 showPrompt();
+
+function calculateExecution() {
+    while(true) {
+        let inputData = question('Enter logics : ');
+
+        if () {
+            //functions
+        } else {
+            //functions 
+        }
+    }
+}
+
+calculateExecution ();
