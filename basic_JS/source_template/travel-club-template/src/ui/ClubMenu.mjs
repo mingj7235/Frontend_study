@@ -46,12 +46,18 @@ class ClubMenu {
                 case 1: 
                     this._clubWindow.register(); 
                     break;
-                case 2: break;
+                case 2: 
+                    this._clubWindow.find();
+                    break;
                 case 3: 
                     this._clubWindow.findAll();
                     break;
-                case 4: break;
-                case 5: break;
+                case 4: 
+                    this._clubWindow.modify();
+                    break;
+                case 5: 
+                    this._clubWindow.remove();
+                    break;
                 case 0: this.exitProgram(); break;
 
             }

@@ -49,6 +49,66 @@ class ClubWindow {
         }
     }
 
+    findOne() { //내부적으로 사용
+        let foundClub = null;
+        if (!this._clubCoordinator.hasClubs()) {
+            console.log('No clubs in the storage !');
+            return null; 
+        }
+
+        while (true) {
+            let clubName = question('Club name to find (0. Club menu) : ');
+            if (clubName ==='0') {
+                break;
+            }
+
+            if(this._clubCoordinator.exist(clubName)) {
+                foundClub = this._clubCoordinator.find(clubName);
+                break;
+            } else {
+                console.log(`No ${clubName} club in the storage`);
+            }
+        }
+        return foundClub;
+    }
+
+    find() {
+        let foundClub = this.findOne();
+
+        if(foundClub) { //null이거나 undefined 라면 false가 return
+            console.log('..........................');
+            console.log(`club Name : ${foundClub.name}`);
+            console.log(`club Intro : ${foundClub.intro}`);
+            console.log(`Founded Date : ${foundClub.foundedDate}`);
+        } 
+        // else {
+        //     console.log(` No ${foundClub.name} club in the storage`);
+        // }
+    }
+
+    modify() {
+        let targetClub = this.findOne();
+
+        let newIntro = question('New intro (0. Club menu) : ');
+
+        if (newIntro === '0') {
+            return;
+        }
+        this._clubCoordinator.modify(targetClub.name, newIntro);
+        console.log(`${targetClub.name} club intro changed -> ${newIntro}`);
+
+    }
+
+    remove () {
+        let targetClub = this.findOne();
+        let confirmStr = question(' Remove this club ? ( Y: yes, N: no )');
+        if(confirmStr.toLowerCase() === 'y' || confirmStr.toLowerCase() === 'yes') {
+            this._clubCoordinator.remove(targetClub.name);
+            console.log(`Removed the club => ${targetClub.name}`);
+        } else {
+            console.log(`Removing cancelled => ${targetClub.name}`);
+        }
+    }
 }
 
 
