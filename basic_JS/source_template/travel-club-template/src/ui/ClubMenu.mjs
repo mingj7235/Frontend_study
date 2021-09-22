@@ -1,6 +1,12 @@
 import {question} from 'readline-sync';
 
+import ClubWindow from './ClubWindow.mjs';
+
 class ClubMenu {
+
+    constructor() {
+        this._clubWindow = new ClubWindow;
+    }
 
     displayMenu () {
         console.log('....................');
@@ -37,9 +43,13 @@ class ClubMenu {
             this.displayMenu();
             inputNumber = this.selectMenu();
             switch(inputNumber) {
-                case 1: break;
+                case 1: 
+                    this._clubWindow.register(); 
+                    break;
                 case 2: break;
-                case 3: break;
+                case 3: 
+                    this._clubWindow.findAll();
+                    break;
                 case 4: break;
                 case 5: break;
                 case 0: this.exitProgram(); break;

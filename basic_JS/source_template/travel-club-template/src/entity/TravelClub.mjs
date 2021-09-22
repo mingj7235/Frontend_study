@@ -27,6 +27,14 @@ class TravelClub {
     set intro (intro){
         this._intro = intro
     }
+
+    get foundedDate () {
+        return this._foundedDate;
+    }
+
+    set foundedDate (foundedDate) {
+        this._foundedDate = foundedDate;
+    }
 }
 
 // let newClub = new TravelClub('Test club', 'Test intro');
