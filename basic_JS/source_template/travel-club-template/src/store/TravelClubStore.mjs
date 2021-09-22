@@ -1,5 +1,5 @@
 import mapStorage from "./MapStorage.mjs";
-import TravelClub from "../entity/TravelClub.mjs";
+//import TravelClub from "../entity/TravelClub.mjs"; 테스트를 위해 임포트했었음
 
 class TravelClubStore {
 
@@ -47,24 +47,29 @@ class TravelClubStore {
     }
 }
 
+export default new TravelClubStore(); //생성해서 넘겨줄 것임 
+/**
+ * 만약에, TravelClubStore() 클래스를 선언하는 곳에서 export default를 한다면 사용하는 쪽에서 new 해서 사용해야한다.
+ * 그런데 이렇게 말미에 new로 export를 해주면 사용하는 측에서 new 하지 않고 사용가능하다. 
+ */
 
 
 //CURD 테스트
 
-let newClub1 = new TravelClub('TestClub1', 'TestIntro');
-let newClub2 = new TravelClub('TestClub2', 'TestIntro');
-let newClub3 = new TravelClub('TestClub3', 'TestIntro');
-let travelClubStore = new TravelClubStore();
+// let newClub1 = new TravelClub('TestClub1', 'TestIntro');
+// let newClub2 = new TravelClub('TestClub2', 'TestIntro');
+// let newClub3 = new TravelClub('TestClub3', 'TestIntro');
+// let travelClubStore = new TravelClubStore();
 
-travelClubStore.store(newClub1);
-travelClubStore.store(newClub2);
-travelClubStore.store(newClub3);
+// travelClubStore.store(newClub1);
+// travelClubStore.store(newClub2);
+// travelClubStore.store(newClub3);
 
-travelClubStore.update(new TravelClub('TestClub2', 'UpdateIntro'));
+// travelClubStore.update(new TravelClub('TestClub2', 'UpdateIntro'));
 
-console.log(travelClubStore.count());
-console.log(travelClubStore.retrieve('TestClub1'))
-console.log(travelClubStore.retrieveAll());
+// console.log(travelClubStore.count());
+// console.log(travelClubStore.retrieve('TestClub1'))
+// console.log(travelClubStore.retrieveAll());
 
 
 
