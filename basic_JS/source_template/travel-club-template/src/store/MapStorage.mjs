@@ -61,7 +61,7 @@ class MapStorage {
     }
 }
 
-export default new MapStorage();
+export default new MapStorage(); //export할 때 new를 해서 주는 것. 싱글톤 패턴이 때문이다. 
 
 
 

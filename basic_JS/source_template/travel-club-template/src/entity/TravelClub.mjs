@@ -29,9 +29,11 @@ class TravelClub {
     }
 }
 
-let newClub = new TravelClub('Test club', 'Test intro');
-console.log(newClub.name);
-console.log(newClub);
+// let newClub = new TravelClub('Test club', 'Test intro');
+// console.log(newClub.name);
+// console.log(newClub);
 
-newClub.name = 'New name'; //setter 사용
-console.log(newClub);
+// newClub.name = 'New name'; //setter 사용
+// console.log(newClub);
+
+export default TravelClub;
