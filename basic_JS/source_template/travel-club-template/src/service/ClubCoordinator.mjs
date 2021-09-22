@@ -1,6 +1,6 @@
 import clubStore from '../store/TravelClubStore.mjs';
 
-import TravelClub from '../entity/TravelClub.mjs'; //test 를 위함
+//import TravelClub from '../entity/TravelClub.mjs'; //test 를 위함
 
 class ClubCoordinator {
 
@@ -49,12 +49,15 @@ class ClubCoordinator {
     }
 }
 
+export default ClubCoordinator;
+
+
 //Test
 
-let newClub = new TravelClub('TestClub', 'Test intro');
+// let newClub = new TravelClub('TestClub', 'Test intro');
 
-let coordinator = new ClubCoordinator();
+// let coordinator = new ClubCoordinator();
 
-coordinator.register(newClub);
-console.log(coordinator.find(newClub.name));
-console.log(coordinator.findAll());
+// coordinator.register(newClub);
+// console.log(coordinator.find(newClub.name));
+// console.log(coordinator.findAll());
